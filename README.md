@@ -3,7 +3,7 @@
 GymPass style app.
 
 
-## REQUISITOS FUNCIONAIS
+### REQUISITOS FUNCIONAIS
 
 - [ ] Deve ser possível se cadastrar;
 - [ ] Deve ser possível se autenticar;
@@ -17,7 +17,7 @@ GymPass style app.
 - [ ] Deve ser possível cadastrar uma acadamia;
 
 
-## REGRAS DE NEGÓCIO
+### REGRAS DE NEGÓCIO
 
 - [ ] O usuário não deve poder se cadastrar com um email duplicado;
 - [ ] O usuário não pode fazer dois check-ins no mesmo dia;
@@ -30,7 +30,7 @@ GymPass style app.
 
 
 
-## REQUISITOS NÃO FUNCIONAIS (REQUISITOS TÉCNICOS, EX. BD, PAGINÇÃO, ...)
+### REQUISITOS NÃO FUNCIONAIS (REQUISITOS TÉCNICOS, EX. BD, PAGINÇÃO, ...)
 - [ ] A senha do usuário precisa estar criptografada;
 - [ ] Os dados da aplicação precisam estar persistidos em um banco PostgresSQL;
 - [ ] Todas listas de dados precisam estar paginadas com 20 itens por página;
