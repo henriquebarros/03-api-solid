@@ -29,7 +29,7 @@ export const register = async (
       return reply.status(406).send({ message: err.message })
     }
 
-    return reply.status(500).send()
+    throw err
   }
 
   return reply.status(201).send()
