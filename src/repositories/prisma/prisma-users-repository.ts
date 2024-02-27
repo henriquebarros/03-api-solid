@@ -9,7 +9,7 @@ export class PrismaUsersRepository implements UsersRepository {
         email,
       },
     })
-
+    console.log(user)
     return user
   }
 
