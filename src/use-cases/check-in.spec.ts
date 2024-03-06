@@ -1,7 +1,6 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest'
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-respoitory'
 import { CheckInUseCase } from './check-in'
-import { afterEach } from 'node:test'
 
 let checkInsRepository: InMemoryCheckInsRepository
 // system under test
@@ -29,7 +28,7 @@ describe('Check-in Use Case', () => {
     expect(checkIn.id).toEqual(expect.any(String))
   })
   it('should not be able to check in twice in the same day', async () => {
-    vi.setSystemTime(new Date(2024, 2, 5, 0, 0))
+    vi.setSystemTime(new Date(2024, 2, 5, 0, 1))
 
     await sut.execute({
       userId: 'user-01',
