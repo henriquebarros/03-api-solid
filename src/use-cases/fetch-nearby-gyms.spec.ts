@@ -1,5 +1,4 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { SearchGymsUseCaseCase } from './search-gyms'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
 import { FetchNearbyGymsUseCaseCase } from './fetch-nearby-gyms'
 
