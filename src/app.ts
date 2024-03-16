@@ -3,16 +3,19 @@ import fastifyJwt from '@fastify/jwt'
 
 import { usersRoutes } from './http/controllers/users/routes'
 import { gymsRoutes } from './http/controllers/gyms/routes'
+import { checkInsRoutes } from './http/controllers/check-ins/routes'
 
 import { ZodError } from 'zod'
 import { env } from './env'
 
 export const app = fastify()
+
 app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
 })
 app.register(usersRoutes)
 app.register(gymsRoutes)
+app.register(checkInsRoutes)
 // docker 670d562d00fd
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {

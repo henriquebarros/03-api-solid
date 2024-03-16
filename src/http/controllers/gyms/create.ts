@@ -11,7 +11,7 @@ export const create = async (request: FastifyRequest, reply: FastifyReply) => {
       return Math.abs(value) <= 90
     }),
     longitude: z.number().refine((value) => {
-      return Math.abs(value) <= 90
+      return Math.abs(value) <= 180
     }),
   })
 

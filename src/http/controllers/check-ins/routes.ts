@@ -4,7 +4,7 @@ import { create } from './create'
 import { validate } from './validate'
 import { history } from './history'
 import { metrics } from './metrics'
-export const gymsRoutes = async (app: FastifyInstance) => {
+export const checkInsRoutes = async (app: FastifyInstance) => {
   // Todas as rotas contidas neste arquivo de rotas serão submetidas ao middleware de autenticação.
   app.addHook('onRequest', verifyJWT)
 
