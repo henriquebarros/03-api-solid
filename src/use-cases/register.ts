@@ -22,7 +22,7 @@ export class RegisterUseCase {
     password,
   }: RegisterUseCaseRequest): Promise<RegisterUseCaseResponse> {
     const password_hash = await hash(password, 6) // 6 round: representa a quantidade vezes em que será criado um hash a partir do anterior
-
+    console.log(password_hash)
     const userWithSameEmail = await this.usersRepository.findByEmail(email)
     if (userWithSameEmail) {
       throw new UserAlreadyExistsError()

@@ -6,19 +6,17 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-
-function generateDatabaseURL(schema: string){
-  if(!process.env.DATABASE_URL){
+function generateDatabaseURL(schema: string) {
+  if (!process.env.DATABASE_URL) {
     throw new Error('Please provide a DATABASE_URL environment variable.')
   }
 
   const url = new URL(process.env.DATABASE_URL)
 
-  url.searchParams.set('schema',schema)
+  url.searchParams.set('schema', schema)
 
   return url.toString()
 }
-
 
 export default <Environment>{
   name: 'prisma',
@@ -33,15 +31,17 @@ export default <Environment>{
       verificar se houve alterações antes de aplicá-las. Em vez disso, simplesmente aplicando as migrações 
       diretamente, sem esse processo de comparação.
 
-    */ 
+    */
     execSync('npx prisma migrate deploy')
     return {
       async teardown() {
-        //console.log('Teardown')
-        //deleta base se houver
-        await prisma.$executeRawUnsafe(`DROP SCHEMA IF EXISTS "${schema}" CASCADE`)
+        // console.log('Teardown')
+        // deleta base se houver
+        await prisma.$executeRawUnsafe(
+          `DROP SCHEMA IF EXISTS "${schema}" CASCADE`,
+        )
 
-        //encerra a conexão com banco de dados
+        // encerra a conexão com banco de dados
         await prisma.$disconnect()
       },
     }
